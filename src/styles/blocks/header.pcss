@@ -1,9 +1,21 @@
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 8px;
+  padding-bottom: 28px;
 }
 
-.header__menu{
+.header__menu {
+  width: 63.5%;
   margin: 0 20px;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.header__links{
+  display: flex;
+  align-items: center;
 }

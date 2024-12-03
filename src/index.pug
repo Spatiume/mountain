@@ -11,13 +11,13 @@ html(lang="en")
     .wrapper 
       .welcome-section
         section.hero
-          .container
+          .container.hero__container
             header.header
               .header__logo
                 .logo BA
               .header__menu 
                 nav.menu
-                  -var items = ['Главная', 'Обо мне','Навыки','Работы','Связаться'];
+                  -var items = ['Главная', 'Обо мне','Навыки','Работы', 'Отзывы', 'Связаться'];
                   ul.menu__list
                     each item in items
                       li.menu__item
@@ -30,17 +30,20 @@ html(lang="en")
                       li.socials__item
                         a(href="#").socials__link
                           +icon(item,'socials__icon')
+                a.hamburger-menu
+                  .hamburger-menu__bars
 
             .hero__content
               .user-data
-                .user-data__desc Личный сайт
-                .user-data__name Владимир Астаханов
+                .user-data__desc Личный сайт <br> веб-разработчика
+                .user-data__name Владимир <br> Астаханов
 
             .hero__bottom-btn
-              a(href="#").scroll-down-btn Кнопка вниз
+              a(href="#").scroll-down-btn Скролл
+                +icon('scroll', 'scroll-down-btn__icon')
 
         section.about-section
-          .container 
+          .container.about-section__container
             .about
               .about__user-data 
                 .user-info 
@@ -50,7 +53,7 @@ html(lang="en")
                   .user-info__content
                     -
                       var userdata = [
-                        ['Проживаю', 'Санкт-петербург'],
+                        ['Проживаю', 'Санкт-Петербург'],
                         ['Возраст', '28 лет'],
                         ['Родился', '20 ноября 1996'],
                       ];
@@ -73,34 +76,40 @@ html(lang="en")
               polygon(points="0,0 0,100 1000,100")
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
               polygon(points="1000,0 1000,100 0,100")
-        section.values 
-          .values__desc
-            h2.values__title Чем я могу быть полезен 
-            .values__info
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fuga minima facere ullam similique error deleniti repellat officiis! Sapiente necessitatibus itaque vitae? Omnis, minima. Provident, sequi! Totam molestiae dicta at.
+      section.values 
+        .container
+          .values__title
+            .long-title
+              h3.long-title__text Чем я могу быть полезен вам
+              .long-title__desc Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-            .values__content
-              -
-                var items=[
-                    ['Frontend', ['HTML','CSS','jQuery']],
-                    ['Backend', ['GIT', 'PHP', 'docker']]
-                ];
-              ul.skill-list
-                each row in items 
-                  li.skill-list__item.skills-row 
-                    .skills-row__title #{row[0]}
-                      ul.skills-row__list 
-                        each cell in row[1]
-                          li.skills-row__item
-                            .skill
-                              .skill__cirlce 
-                              .skill__circle 
-                              .skill__title #{cell}
+          +image('content/backpack.png', 'user-pic, values__decoration')
+          .values__content
+            -
+              var items=[
+                ['Front-end', ['HTML5','CSS3','Javascript', 'Jquery и Vue.js']],
+                ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
+              ];
+            ul.skills
+              each row in items 
+                li.skills__item.skills-row 
+                  .skills-row__title #{row[0]}
+                  ul.skills-row__list 
+                    each cell in row[1]
+                      li.skills-row__item
+                        .skill
+                          svg(viewBox="0 0 100 100").skill__circle-shape
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle-under
+                            circle(cx="50" cy="50" r="40" ref="circle" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle-above
+                            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                              stop(offset="0%" stop-color="#5500f2")
+                              stop(offset="100%" stop-color="#ad00ed")
+                          .skill__title #{cell}
 
 
 
 
 
-      //-   +image('content/user.jpg', 'user-pic')
-      //-   +icon('link', 'link-class')
-      //-   .icon-bg
+    //-   +image('content/user.jpg', 'user-pic')
+    //-   +icon('link', 'link-class')
+    //-   .icon-bg

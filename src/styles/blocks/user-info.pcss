@@ -1,3 +1,39 @@
+.user-info{
+  display: block;
+}
+
 .user-info__avatar{
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 68px;
+}
+
+.user-info__content{
+  display: block;
+}
+
+.user-info__data{
+  width: 100%;
+  
+  tr {
+    display: flex;
+    margin-bottom: 16px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    td{
+      width: 50%;
+      &:first-child{
+        width: 50%;
+      }
+      &:last-child{
+        width: 50%;
+        font-weight: 600;
+      }
+    }
+  }
+
+  
 }
