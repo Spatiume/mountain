@@ -1,0 +1,56 @@
+.full-screen-menu {
+  display: none;
+
+  &--active {
+    display: flex;
+  }
+
+  align-items: center;
+  background-color: white;
+  width: 40%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  position: fixed;
+
+  @include phones{
+    width: 100%;
+
+    .full-screen-menu__content{
+      align-items: center;
+    }
+  }
+}
+
+.full-screen-menu__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 10%;
+
+  .full-screen-menu__left{
+    margin-bottom: 40px;
+  }
+
+}
+
+.full-screen-menu__btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 2.5%;
+  right: 7.5%;
+}
+
+.full-screen-menu__close {
+  fill: currentColor;
+
+  &:hover,
+  :focus,
+  :active {
+    fill: $links-color;
+  }
+}

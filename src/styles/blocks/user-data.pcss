@@ -1,16 +1,26 @@
-.user-data{
+.user-data {
   display: flex;
   width: 100%;
+
+  @include tablets {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
-.user-data__name{
+.user-data__name {
   font-size: 72px;
   font-weight: 800;
   line-height: 0.83;
   width: 58%;
+
+  @include tablets {
+    width: 100%;
+    font-size: 64px;
+  }
 }
 
-.user-data__desc{
+.user-data__desc {
   width: 42%;
   font-size: 18px;
   font-weight: 600;
@@ -18,4 +28,10 @@
   opacity: 0.5;
   text-align: right;
   padding-right: 5.5%;
+
+  @include tablets{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
 }

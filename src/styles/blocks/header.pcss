@@ -15,7 +15,12 @@
   }
 }
 
-.header__links{
+.header__links {
   display: flex;
   align-items: center;
+
+  @include tablets {
+    display: none;
+  }
+
 }

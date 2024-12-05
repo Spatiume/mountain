@@ -21,17 +21,18 @@ html(lang="en")
                   ul.menu__list
                     each item in items
                       li.menu__item
-                        a.menu__link #{item}
+                        a(href="#").menu__link #{item}
+
 
               .header__links
-                -var icons = ['insta','vk','github'];
+                -var icons = ['instagram','vk','github'];
                   ul.socials
                     each item in icons
                       li.socials__item
                         a(href="#").socials__link
                           +icon(item,'socials__icon')
-                a.hamburger-menu
-                  .hamburger-menu__bars
+              a.hamburger-menu
+                .hamburger-menu__bars
 
             .hero__content
               .user-data
@@ -41,6 +42,26 @@ html(lang="en")
             .hero__bottom-btn
               a(href="#").scroll-down-btn Скролл
                 +icon('scroll', 'scroll-down-btn__icon')
+          .full-screen-menu
+            .full-screen-menu__btn
+              a.full-screen-menu__close
+                +icon('cross','cross')
+
+            .full-screen-menu__content 
+              .full-screen-menu__left
+                nav.menu.menu--vertical
+                  -var items = ['Главная', 'Обо мне','Навыки','Работы', 'Отзывы', 'Связаться'];
+                  ul.menu__list
+                    each item in items
+                      li.menu__item
+                        a(href="#").menu__link #{item}
+              .full-screen-menu__right 
+                -var icons = ['instagram','vk','github'];
+                  ul.socials.socals--vertical
+                    each item in icons
+                      li.socials__item
+                        a(href=`https://www.${item}.com` target='_blank').socials__link
+                          +icon(item,'socials__icon')
 
         section.about-section
           .container.about-section__container

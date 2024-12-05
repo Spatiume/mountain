@@ -1,25 +1,42 @@
-.menu{
+.menu {
   width: 100%;
 }
-.menu__list{
+
+.menu--vertical {
+  .menu__list {
+    flex-direction: column;
+  }
+
+  .menu__item {
+    margin-right: 0;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+}
+
+.menu__list {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.menu__item{
+.menu__item {
   margin-right: 8px;
+  font-size: 18px;
 
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
 }
 
 
-.menu__link{
-  white-space:nowrap;
-  font-size: 16px;
-  &:hover{
+.menu__link {
+  white-space: nowrap;
+  text-decoration: none;
+
+  &:hover,
+  :active,
+  :focus {
     color: $links-color;
     text-decoration: underline;
   }
