@@ -1,0 +1,31 @@
+.contacts-section {
+  background-color: cadetblue;
+  min-height: 100vh;
+  position: relative;
+  height: 1428px;
+  background: url(./../images/content/budda.png) center center /cover no-repeat;
+  z-index: 3;
+
+}
+
+.contacts-section__triangles {
+  position: absolute;
+  height: 62px;
+  width: 100%;
+  top: 0;
+  color: white;
+
+  .triangle {
+    transform: rotate(-180deg);
+    
+    
+    &:first-child {
+      left: 1px;
+    }
+
+    &:last-child {
+      right: 1px;
+    }
+
+  }
+}

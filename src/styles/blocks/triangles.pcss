@@ -1,13 +1,25 @@
 .triangles {
   display: flex;
   fill: currentColor;
+  position: relative;
+  height: 100%;
 }
 
 .triangles__item {
   width: 50%;
   height: 100%;
+  position: absolute;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-child {
+    right: 0;
+  }
 }
 
-.triangle{
+.triangle {
   fill: currentColor;
+  stroke: currentColor;
 }

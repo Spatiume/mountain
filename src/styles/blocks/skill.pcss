@@ -24,13 +24,12 @@
   fill: transparent;
 
   &-above {
-    // stroke:#dc9322;
     stroke-width: 12px;
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 251;
+    transition: stroke-dashoffset 0.5s;
     stroke-dasharray: 251;
     transform: rotate(180deg);
     transform-origin: 50% 50% 0;
-    // fill: linear-gradient(to top, #5500f2, #ad00ed);
   }
 
   &-under {
@@ -38,4 +37,25 @@
     stroke-width: 6px;
   }
 
+
+}
+
+
+
+
+
+
+.active {
+  // stroke-dashoffset: 251;
+  // animation: draw 6s ease forwards;
+
+  // @keyframes draw {
+  //   from {
+  //     stroke-dashoffset: 251;
+  //   }
+
+  //   to {
+  //     stroke-dashoffset: initial;
+  //   }
+  // }
 }
