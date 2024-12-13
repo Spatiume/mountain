@@ -1,0 +1,184 @@
+.works-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include tablets {
+    min-height: initial;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.works-slider__pics {
+  width: 51.5vw;
+  max-width: 62%;
+  min-height: 340px;
+  height: 29vw;
+  max-height: 450px;
+  margin-bottom: 50px;
+
+  position: relative;
+  z-index: 10;
+
+  @include tablets {
+    margin-bottom: 105px;
+    width: 100%;
+    height: 340px;
+    max-width: none;
+    max-height: none;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 60px;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &:before {
+    content: attr(data-slide);
+    position: absolute;
+    top: 38%;
+    transform: translateY(-60%);
+    line-height: 1;
+    left: 95%;
+    font-size: 300px;
+    font-weight: 800;
+    opacity: 0.1;
+  }
+}
+
+.works-slider__pics-content {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.works-slider__fullpic-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.works-slider__fullpic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.works-slider__btns {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+
+  @include phones {
+    top: initial;
+    bottom: 0;
+  }
+}
+
+.works-slider__btn {
+  width: 50px;
+  height: 50px;
+  background: #2d3c4e;
+  display: block;
+  position: relative;
+
+  &:before {
+    content: "";
+    background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+    display: block;
+    width: 8px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transition: opacity .3s, margin-top .3s;
+    opacity: .3;
+  }
+
+  &:hover,
+  :focus,
+  :active {
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &--prev {
+    &:before {
+      transform: translate(-50%, -50%) rotate(-270deg);
+    }
+
+    &:active {
+      &:before {
+        margin-top: 3px;
+      }
+    }
+  }
+
+  &--next {
+    &:active {
+      &:before {
+        margin-top: -3px;
+      }
+    }
+  }
+}
+
+.works-slider__thumbs {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 178px;
+
+
+  @include phones {
+    display: none;
+  }
+}
+
+.works-slider__thumb-item {
+  height: 100px;
+  transition: .1s;
+
+  &.active,
+  &:hover,
+  :focus {
+    outline: 3px solid $links-color;
+  }
+}
+
+.works-slider__thumb-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.works-slider__data {
+  width: 32.5%;
+  z-index: 10;
+
+
+  @include tablets {
+    width: 100%;
+    padding: 0 18%;
+    min-height: 450px;
+  }
+
+  @include phones{
+    padding: 0 5%;
+  }
+}

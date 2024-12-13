@@ -1,0 +1,45 @@
+script(type="text/x-template")#slider-container
+  .works-slider
+    display(:currentWork="currentWork", :works="works" @clickOnBtnSlide='changeSlide', :worksForThumbs="worksForThumbs")
+    info(:currentWork="currentWork")
+
+
+
+script(type="text/x-template")#slider-display
+  .works-slider__pics(:data-slide="slideIndex") 
+    .works-slider__pics-content
+      .works-slider__fullpic-container
+        img(:src="currentWork.photo" alt="картинка-слайдера").works-slider__fullpic
+      thumbs(:works="reversedWorks", :currentWork="currentWork")
+      btns(@clickOnBtnSlide="$emit('clickOnBtnSlide', $event)")
+
+script(type="text/x-template")#slider-btns
+  .works-slider__btns
+    a(@click.prevent="$emit('clickOnBtnSlide','next')").works-slider__btn.works-slider__btn--next
+    a(@click.prevent="$emit('clickOnBtnSlide','prev')").works-slider__btn.works-slider__btn--prev
+
+script(type="text/x-template")#slider-thumbs
+  ul.works-slider__thumbs
+    li.works-slider__thumb-item(
+      v-for="work in works"
+      :key="work.id"
+      :class="{active: currentWork.id == work.id}"
+      )
+      a.works-slider__thubm-link
+        img(:src="work.photo" alt="превью слайдера").works-slider__thumb-pic
+
+script(type="text/x-template")#slider-info
+  .works-slider__data.slider-info   
+    tags(:tags="tagsArray")
+    h5.slider-info__title {{currentWork.title}}
+    .slider-info__desc  
+      p {{currentWork.description}}
+    a(:href="currentWork.link" target="_blank").slider-info__link.iconed-link Посмотреть сайт
+
+
+
+script(type="text/x-template")#slider-tags
+  ul.slider-info__tags.tags
+    li.tags__item.tag(v-for="tag in tags")
+      .tag__title {{tag}}
+

@@ -1,0 +1,33 @@
+.slider-info {
+  display: flex;
+  flex-direction: column;
+
+  @include tablets {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  @include phones {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.slider-info__tags {
+  margin-bottom: 26px;
+}
+
+.slider-info__title {
+  font-size: 30px;
+  margin-bottom: 32px;
+  font-weight: bold;
+  line-height: 46px;
+}
+
+.slider-info__desc {
+  font-weight: 600;
+  opacity: 0.7;
+  line-height: 1.8;
+  margin-bottom: 38px;
+}
