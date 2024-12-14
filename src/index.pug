@@ -14,7 +14,7 @@ html(lang="ru")
           .container.hero__container
             header.header
               .header__logo
-                .logo BA
+                a(href="index.html").logo BA
               .header__menu 
                 nav.menu
                   -var items = ['Главная', 'Обо мне','Навыки','Работы', 'Отзывы', 'Связаться'];
@@ -40,7 +40,7 @@ html(lang="ru")
                 .user-data__name Владимир <br> Астаханов
 
             .hero__bottom-btn
-              a(href="#").scroll-down-btn Скролл
+              a().scroll-down-btn Скролл
                 +icon('scroll', 'scroll-down-btn__icon')
           .full-screen-menu
             .full-screen-menu__btn
@@ -130,6 +130,66 @@ html(lang="ru")
               polygon(points="0,0 0,100 1000,100")
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangle
               polygon(points="1000,0 1000,100 0,100")
+        .contacts-section__container.container 
+          .contacts-section__content
+            .contacts-section__reviews.reviews-section
+              h4.reviews-section__title.section__title Что обо мне говорят
+              .reviews 
+                .reviews__btns 
+                  a.reviews__btn-left.reviews__btn
+                  a.reviews__btn-right.reviews__btn
+
+                ul.reviews__list 
+                  li.reviews__item
+                    .review 
+                      .review__desc 
+                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .review__author 
+                        .review__author-avatar
+                          .avatar
+                            +image('content/user.jpg','avatar__img','Фото пользователя') 
+                        .review__author-info 
+                          .review__author-name Ковальчук Дмитрий
+                          .review__auhotr-desc Основатель LoftSchool
+                  li.reviews__item  
+                    .review 
+                      .review__desc 
+                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .review__author 
+                        .review__author-avatar
+                          .avatar
+                            +image('content/user.jpg','avatar__img','Фото пользователя') 
+                        .review__author-info 
+                          .review__author-name Ковальчук Дмитрий
+                          .review__auhotr-desc Основатель LoftSchool
+
+              .contacts-section__form
+
+            .contacts-section__form.form-section 
+              h4.form-section__title.section__title Связаться со мной
+
+              form.form-section__form.form-contact
+                .form-contact__row
+                  label.form-block.form-block--error
+                    .form-block__title Введите ваше имя
+                    .form-block__field 
+                      +icon('user','form-block__icon', 'form-block__icon--user')
+                      input.form-block__input(placeholder="Ковальчук Дмитрий")
+                    .form-block__error Какай то ошибка
+                  label.form-block
+                    .form-block__title Введите ваш email
+                    .form-block__field
+                      +icon('envelope','form-block__icon')
+                      input(type="text" placeholder="loftschool@study.com").form-block__input
+                .form-contact__row
+                  label.form-block
+                    .form-block__title Сообщение к письму
+                    .form-block__field
+                      +icon('message','form-block__icon')
+                      textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form-block__input.form-block__textarea
+                .form-contact__row 
+                  .form-contact__btns
+                    input(type="submit" value="Отправить").form__submit.btn
 
       footer.footer 
 

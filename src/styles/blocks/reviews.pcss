@@ -1,0 +1,112 @@
+$btn-color: rgba($text-color, 0.9);
+
+.reviews {
+  position: relative;
+  padding-bottom: 90px;
+}
+
+
+.reviews__list {
+  display: flex;
+}
+
+.reviews__item {
+  width: 40%;
+  margin-right: 5.5%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-right: 0;
+  }
+
+}
+
+.reviews__btns {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 45.5%;
+  transform: translateX(-50%);
+}
+
+.reviews__btn {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 3px solid $btn-color;
+  position: relative;
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: margin-left .3s;
+  }
+
+  &::before {
+    background: svg-load('arrow-down.svg', fill=$btn-color, width=100%, height=100%) center center no-repeat;
+  }
+
+  &::after {
+    background: svg-load('arrow-down.svg', fill=$links-color, width=100%, height=100%) center center no-repeat;
+    display: none;
+  }
+
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $links-color;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &-left {
+    margin-right: 20px;
+
+    &::before,
+    &::after {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    &:active {
+      &::after {
+        margin-left: -3px;
+      }
+    }
+
+  }
+
+
+  &-right {
+
+    &::before,
+    &::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    &:active {
+      &::after {
+        margin-left: 3px;
+      }
+    }
+
+  }
+}

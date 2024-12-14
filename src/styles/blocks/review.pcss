@@ -1,0 +1,45 @@
+$review-text-color: rgba($text-color, .65);
+
+.review {
+  padding-left: 96px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.88;
+  position: relative;
+  color: $review-text-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 69px;
+    height: 69px;
+    background: svg-load('quote.svg', fill=$review-text-color) center center/cover no-repeat;
+    opacity: 0.15;
+  }
+}
+
+.review__desc {
+  margin-bottom: 24px;
+}
+
+.review__author {
+  display: flex;
+  align-items: center;
+
+  .review__author-avatar {
+    width: 76px;
+    height: 76px;
+    margin-right: 30px;
+  }
+
+
+  .review__author-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 2%;
+    color: $text-color;
+  }
+}

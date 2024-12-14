@@ -1,6 +1,6 @@
 script(type="text/x-template")#slider-container
   .works-slider
-    display(:currentWork="currentWork", :works="works" @clickOnBtnSlide='changeSlide', :worksForThumbs="worksForThumbs")
+    display(:currentWork="currentWork", :works="works" @clickOnBtnSlide='changeSlide', :worksForThumbs="worksForThumbs", @clickOnThumb="changeCurrentWork")
     info(:currentWork="currentWork")
 
 
@@ -10,7 +10,7 @@ script(type="text/x-template")#slider-display
     .works-slider__pics-content
       .works-slider__fullpic-container
         img(:src="currentWork.photo" alt="картинка-слайдера").works-slider__fullpic
-      thumbs(:works="reversedWorks", :currentWork="currentWork")
+      thumbs(:works="reversedWorks", :currentWork="currentWork", @clickOnThumb="$emit('clickOnThumb', $event)")
       btns(@clickOnBtnSlide="$emit('clickOnBtnSlide', $event)")
 
 script(type="text/x-template")#slider-btns
@@ -24,12 +24,13 @@ script(type="text/x-template")#slider-thumbs
       v-for="work in works"
       :key="work.id"
       :class="{active: currentWork.id == work.id}"
+      @click="$emit('clickOnThumb', work.id)"
       )
       a.works-slider__thubm-link
         img(:src="work.photo" alt="превью слайдера").works-slider__thumb-pic
 
 script(type="text/x-template")#slider-info
-  .works-slider__data.slider-info   
+  article.works-slider__data.slider-info   
     tags(:tags="tagsArray")
     h5.slider-info__title {{currentWork.title}}
     .slider-info__desc  

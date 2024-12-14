@@ -2,23 +2,42 @@
   background-color: cadetblue;
   min-height: 100vh;
   position: relative;
-  height: 1428px;
-  background: url(./../images/content/budda.png) center center /cover no-repeat;
+  background: url(./../images/content/budda2.png) center center /cover no-repeat;
   z-index: 3;
+  padding-top: 60px;
+}
 
+
+.contacts-section__content {
+  padding-top: 130px;
+  padding-bottom: 164px;
+
+}
+
+.contacts-section__reviews {
+  margin-bottom: 98px;
+}
+
+.contacts-section__form {
+  padding-right: 19.75%;
+
+
+  @include tablets {
+    padding-right: 0;
+  }
 }
 
 .contacts-section__triangles {
   position: absolute;
-  height: 62px;
+  height: 60px;
   width: 100%;
   top: 0;
   color: white;
 
   .triangle {
     transform: rotate(-180deg);
-    
-    
+
+
     &:first-child {
       left: 1px;
     }

@@ -97,19 +97,21 @@
     content: "";
     background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
     display: block;
-    width: 8px;
+    width: 10px;
     height: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
     transition: opacity .3s, margin-top .3s;
-    opacity: .3;
+    // opacity: .3;
   }
 
   &:hover,
   :focus,
   :active {
+    background-color: $main-color;
+
     &:before {
       opacity: 1;
     }
@@ -151,11 +153,21 @@
 .works-slider__thumb-item {
   height: 100px;
   transition: .1s;
+  outline: 3px solid transparent;
 
-  &.active,
+  &.active {
+    outline: 3px solid $main-color;
+  }
+
   &:hover,
-  :focus {
-    outline: 3px solid $links-color;
+  &:focus,
+  &:active {
+    background-color: $main-color;
+
+    .works-slider__thumb-pic{
+      filter: opacity(0.5);
+    }
+
   }
 }
 
@@ -178,7 +190,7 @@
     min-height: 450px;
   }
 
-  @include phones{
+  @include phones {
     padding: 0 5%;
   }
 }

@@ -1,5 +1,18 @@
 document.querySelector('.hamburger-menu').addEventListener('click', addFullScreenMenu);
 
+function autoGrow(el) {
+  console.log('d')
+  el.style.height = '5px';
+  el.style.height = el.scrollHeight + 'px';
+}
+
+// Эту функцию следует привязать к событию 'input'
+document.querySelector('.form-block__textarea').addEventListener('input', function() {
+  autoGrow(this);
+});
+
+
+
 function addFullScreenMenu() {
   let menu = document.querySelector('.full-screen-menu');
   let closeBtn = menu.querySelector('.full-screen-menu__close');

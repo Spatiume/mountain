@@ -53,7 +53,7 @@ new Vue({
   data() {
     return {
       works: [],
-      currentIndex: 2,
+      currentIndex: 3,
       worksForThumbs: [],
     }
   },
@@ -69,6 +69,9 @@ new Vue({
     }
   },
   methods: {
+    changeCurrentWork(newCurrentWork) {
+      this.currentIndex = newCurrentWork;
+    },
     makeInfiniteLoopForIndex(value) {
       const worksAmountFromZero = this.works.length - 1;
       if (value > worksAmountFromZero) this.currentIndex = 0;
@@ -87,9 +90,9 @@ new Vue({
       if (maxValue < this.currentIndex) {
         minValue = this.currentIndex - 2;
         maxValue = this.currentIndex;
-        this.worksForThumbs = [...this.works].slice(minValue, maxValue+1)
+        this.worksForThumbs = [...this.works].slice(minValue, maxValue + 1)
       } else {
-        this.worksForThumbs = [...this.works].slice(minValue, maxValue+1)
+        this.worksForThumbs = [...this.works].slice(minValue, maxValue + 1)
       }
     },
     changeSlide(direction) {
