@@ -29,7 +29,7 @@ html(lang="ru")
                   ul.socials
                     each item in icons
                       li.socials__item
-                        a(href="#").socials__link
+                        a(href=`https://www.${item}.com` target='_blank').socials__link
                           +icon(item,'socials__icon')
               a.hamburger-menu
                 .hamburger-menu__bars
@@ -134,35 +134,7 @@ html(lang="ru")
           .contacts-section__content
             .contacts-section__reviews.reviews-section
               h4.reviews-section__title.section__title Что обо мне говорят
-              .reviews 
-                .reviews__btns 
-                  a.reviews__btn-left.reviews__btn
-                  a.reviews__btn-right.reviews__btn
-
-                ul.reviews__list 
-                  li.reviews__item
-                    .review 
-                      .review__desc 
-                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                      .review__author 
-                        .review__author-avatar
-                          .avatar
-                            +image('content/user.jpg','avatar__img','Фото пользователя') 
-                        .review__author-info 
-                          .review__author-name Ковальчук Дмитрий
-                          .review__auhotr-desc Основатель LoftSchool
-                  li.reviews__item  
-                    .review 
-                      .review__desc 
-                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                      .review__author 
-                        .review__author-avatar
-                          .avatar
-                            +image('content/user.jpg','avatar__img','Фото пользователя') 
-                        .review__author-info 
-                          .review__author-name Ковальчук Дмитрий
-                          .review__auhotr-desc Основатель LoftSchool
-
+              #reviews-component
               .contacts-section__form
 
             .contacts-section__form.form-section 
@@ -216,7 +188,7 @@ html(lang="ru")
                   ul.socials
                     each item in icons
                       li.socials__item
-                        a(href="#").socials__link
+                        a(href=`https://www.${item}.com` target='_blank').socials__link
                           +icon(item,'socials__icon')
 
               .footer__data-right

@@ -77,13 +77,6 @@ new Vue({
       if (value > worksAmountFromZero) this.currentIndex = 0;
       if (value < 0) this.currentIndex = worksAmountFromZero;
     },
-    makeArrWithRequiredImages(array) {
-      return array.map((item) => {
-        const requireImg = require(`../images/content/${item.photo}`)
-        item.photo = requireImg.default;
-        return item;
-      })
-    },
     makeNewArrayFromThumbs() {
       let maxValue = 2;
       let minValue = 0;
@@ -104,7 +97,14 @@ new Vue({
           this.currentIndex--;
           break;
       }
-    }
+    },
+    makeArrWithRequiredImages(array) {
+      return array.map((item) => {
+        const requireImg = require(`../images/content/${item.photo}`)
+        item.photo = requireImg.default;
+        return item;
+      })
+    },
   },
   created() {
     const data = require('./../data/works.json');

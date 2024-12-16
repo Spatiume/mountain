@@ -41,6 +41,7 @@ $btn-color: rgba($text-color, 0.9);
   position: relative;
   border-radius: 50%;
 
+
   &::before,
   &::after {
     content: "";
@@ -74,6 +75,19 @@ $btn-color: rgba($text-color, 0.9);
     }
 
     &::after {
+      display: block;
+    }
+  }
+
+  &:disabled {
+    border-color: $text-color;
+    opacity: 0.6;
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
       display: block;
     }
   }

@@ -6,5 +6,4 @@ if (process.env.NODE_ENV === "development") {
 import "./scripts/full-screen-menu"
 import "./scripts/skills";
 import "./scripts/works";
-
-
+import "./scripts/reviews";

@@ -1,0 +1,28 @@
+script(type="text/x-template")#reviews
+  .reviews 
+    btns(@clickOnBtn="changeReview" :isMinIndex="isMinIndex" :isMaxIndex="isMaxIndex")
+    reviews-list(:currentReviews="currentReviews")
+
+
+
+script(type="text/x-template")#reviews-btns
+  .reviews__btns 
+    button(@click.prevent="$emit('clickOnBtn','left')" :disabled="isMinIndex").reviews__btn-left.reviews__btn
+    button(@click.prevent="$emit('clickOnBtn','right')" :disabled="isMaxIndex").reviews__btn-right.reviews__btn
+
+script(type="text/x-template")#reviews-list
+  ul.reviews__list 
+    li.reviews__item(v-for="review in currentReviews", :key="review.id")
+      review(:review="review")
+
+script(type="text/x-template")#review
+  .review 
+    .review__desc 
+      p {{review.text}}
+    .review__author 
+      .review__author-avatar
+        .avatar
+          img(:src="review.photo" alt="Фото пользователя").avatar__img
+      .review__author-info 
+        .review__author-name {{review.author}}
+        .review__auhotr-desc {{review.occ}}
