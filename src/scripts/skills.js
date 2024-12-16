@@ -37,11 +37,11 @@ const skill = {
       }
 
       const options = {
-        threshold: 1,
+        threshold: 0.5,
       }
 
-      const observer = new IntersectionObserver(callback, options);
       const target = this.$refs['circle'];
+      const observer = new IntersectionObserver(callback, options);
       observer.observe(target)
     }
   },

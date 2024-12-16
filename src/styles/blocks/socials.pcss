@@ -1,41 +1,47 @@
-.socials{
+.socials {
   display: flex;
 }
 
-.socials--vertical{
+.socials--vertical {
   flex-wrap: wrap;
 
-  .socials__item{
+  .socials__item {
     margin-right: 15%;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }
 }
 
-.socials__item{
+.socials__item {
   margin-right: 40px;
+  cursor: pointer;
 
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
+
+  &:hover,
+  :focus,
+  :active {
+    .socials__icon {
+      fill: $links-color;
+    }
+  }
+
 }
 
-.socials__link{
+.socials__link {
   width: 30px;
   height: 30px;
   display: block;
 }
 
-.socials__icon{
+.socials__icon {
   fill: currentColor;
   width: 100%;
   height: 100%;
 
-  &:hover,:focus,:active{
-    fill: $links-color;
-  }
+
 }
-
-
