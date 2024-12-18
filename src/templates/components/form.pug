@@ -1,0 +1,32 @@
+script(type="text/x-template")#form-contact
+  form.form-contact(@submit.prevent="submit" novalidate)
+    .form-contact__row
+      form-input(title="Введите ваше имя" placeholder="Ковальчук Дмитрий" v-model="message.name" :currentValue="message.name" @focusOnInput="clearError" :errorMessage="errorMessage.name" type="text" iconName="user")
+      form-input(title="Введите ваш email" placeholder="loftschool@study.com" v-model="message.email" :currentValue="message.email" @focusOnInput="clearError" :errorMessage="errorMessage.email" type="email" iconName="envelope")
+    .form-contact__row
+      label(:class="[{'form-block--error': errorMessage.text}]").form-block
+        .form-block__title Сообщение к письму
+        .form-block__field
+          +icon('message','form-block__icon')
+          textarea(ref="textarea" v-model="message.text" @focus="clearError" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form-block__input.form-block__textarea
+          .form-block__error(v-show="errorMessage.text") {{errorMessage.text}}
+
+    .form-contact__row 
+      .form-contact__btns
+        input(type="submit" value="Отправить").form__submit.btn
+
+    .form-overlay.overlay(v-show="overlay" @click="closeOverlay($event)")
+      .overlay__content 
+        .overlay__text Письмо отправлено
+        input(type="button" value="Закрыть" @click="closeOverlay($event)").overlay__btn.btn
+
+
+
+script(type="text/x-template")#form-input
+  label(:class="[{'form-block--error': error}]").form-block
+    .form-block__title {{title}}
+    .form-block__field  
+      svg(class="form-block__icon" :viewBox=`icon.viewBox` preserveAspectRatio="none")
+        use(:xlink:href=`icon.url`)
+      input.form-block__input( :type="type" :placeholder="placeholder" v-model="value" @input="input" @focus="focus")
+    .form-block__error(v-show="error") {{error}}

@@ -7,3 +7,5 @@ import "./scripts/full-screen-menu"
 import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/reviews";
+import "./scripts/form-contact";
+import "./scripts/menu"

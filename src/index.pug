@@ -10,7 +10,7 @@ html(lang="ru")
   body
     .wrapper 
       .welcome-section
-        section.hero
+        section.hero(id="0")
           .container.hero__container
             header.header
               .header__logo
@@ -19,9 +19,10 @@ html(lang="ru")
                 nav.menu
                   -var items = ['Главная', 'Обо мне','Навыки','Работы', 'Отзывы', 'Связаться'];
                   ul.menu__list
-                    each item in items
+                    each item,index in items
                       li.menu__item
-                        a(href="#").menu__link #{item}
+                        a(moveTo=index).menu__link #{item}
+
 
 
               .header__links
@@ -52,9 +53,9 @@ html(lang="ru")
                 nav.menu.menu--vertical
                   -var items = ['Главная', 'Обо мне','Навыки','Работы', 'Отзывы', 'Связаться'];
                   ul.menu__list
-                    each item in items
+                    each item,index in items
                       li.menu__item
-                        a(href="#").menu__link #{item}
+                        a(moveTo=index).menu__link #{item}
               .full-screen-menu__right 
                 -var icons = ['instagram','vk','github'];
                   ul.socials.socals--vertical
@@ -63,7 +64,7 @@ html(lang="ru")
                         a(href=`https://www.${item}.com` target='_blank').socials__link
                           +icon(item,'socials__icon')
 
-        section.about-section
+        section.about-section(id="1")
           .container.about-section__container
             .about
               .about__user-data 
@@ -98,7 +99,7 @@ html(lang="ru")
                 polygon(points="0,0 0,100 1000,100")
               svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
                 polygon(points="1000,0 1000,100 0,100")
-      section.values 
+      section.values(id="2")
         .container
           .values__title
             .long-title
@@ -108,60 +109,30 @@ html(lang="ru")
           +image('content/backpack.png', 'user-pic, values__decoration')
           .values__content
             #skills-component
-      section.works
+      section.works(id="3")
         .container.works__container 
           h2.section__title.works__title Мои работы
           .works__content 
             #slider-component
 
-
-
-
-
-
-
-
-
-
-      section.contacts-section
+      section.contacts-section(id="4")
         .contacts-section__triangles
           .triangles
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangle
               polygon(points="0,0 0,100 1000,100")
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangle
               polygon(points="1000,0 1000,100 0,100")
+
         .contacts-section__container.container 
           .contacts-section__content
             .contacts-section__reviews.reviews-section
               h4.reviews-section__title.section__title Что обо мне говорят
               #reviews-component
-              .contacts-section__form
 
-            .contacts-section__form.form-section 
+            .contacts-section__form.form-section(id="5")
               h4.form-section__title.section__title Связаться со мной
-
-              form.form-section__form.form-contact
-                .form-contact__row
-                  label.form-block.form-block--error
-                    .form-block__title Введите ваше имя
-                    .form-block__field 
-                      +icon('user','form-block__icon', 'form-block__icon--user')
-                      input.form-block__input(placeholder="Ковальчук Дмитрий")
-                    .form-block__error Какай то ошибка
-                  label.form-block
-                    .form-block__title Введите ваш email
-                    .form-block__field
-                      +icon('envelope','form-block__icon')
-                      input(type="text" placeholder="loftschool@study.com").form-block__input
-                .form-contact__row
-                  label.form-block
-                    .form-block__title Сообщение к письму
-                    .form-block__field
-                      +icon('message','form-block__icon')
-                      textarea(placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса").form-block__input.form-block__textarea
-                .form-contact__row 
-                  .form-contact__btns
-                    input(type="submit" value="Отправить").form__submit.btn
+              .form-section__form
+                #form-contact-component
 
       footer.footer 
         .container.footer__container
@@ -175,9 +146,9 @@ html(lang="ru")
               nav.menu
                 -var items = ['Главная', 'Обо мне','Навыки','Работы', 'Отзывы', 'Связаться'];
                 ul.menu__list
-                  each item in items
+                  each item,index in items
                     li.menu__item
-                      a(href="#").menu__link #{item}
+                      a(moveTo=index).menu__link #{item}
 
             .footer__data
               .footer__data-left
