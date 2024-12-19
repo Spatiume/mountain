@@ -8,4 +8,5 @@ import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/reviews";
 import "./scripts/form-contact";
-import "./scripts/menu"
+import "./scripts/menu";
+import "./scripts/parallax";

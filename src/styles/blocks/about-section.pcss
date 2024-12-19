@@ -1,18 +1,33 @@
-.about-section{
-  position: relative;
-  // height: 100vh;
-  display: flex;
-  padding-bottom: 132px;
-}
-
-.about-section__container{
-  padding: 7.5% 0%;
-}
-
-.about-section__triangles{
+.about-section {
   position: absolute;
-  height: 84px;
+  display: flex;
+  bottom: 150px;
   width: 100%;
+
+  @include tablets {
+    position: relative;
+    bottom: initial;
+    margin-bottom: 20px;
+  }
+
+
+}
+
+.about__decoration{
+  display: none;
+
+
+  @include tablets{
+    display: block;
+  }
+
+  position: absolute;
   bottom: 0;
-  color: white;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .hero__decoration-img{
+    position: absolute;
+  }
+
 }

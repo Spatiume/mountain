@@ -10,6 +10,24 @@ html(lang="ru")
   body
     .wrapper 
       .welcome-section
+        section.parallax
+          .parallax__layer(data-speed="0.1")
+            img(src=require("./images/parallax/1.jpg").default).parallax__img
+          .parallax__layer(data-speed="0.25")
+            img(src=require("./images/parallax/2.png").default).parallax__img
+          .parallax__layer(data-speed="0.35")
+            img(src=require("./images/parallax/3.png").default).parallax__img
+          .parallax__layer(data-speed="0.38")
+            img(src=require("./images/parallax/4.png").default).parallax__img
+          .parallax__layer(data-speed="0.45")
+            img(src=require("./images/parallax/5.png").default).parallax__img
+          .parallax__layer(data-speed="0.48")
+            img(src=require("./images/parallax/6.png").default).parallax__img
+          .parallax__layer(data-speed="0.50")
+            img(src=require("./images/parallax/7.png").default).parallax__img
+          .parallax__layer(data-speed="0.2")
+            .parallax__img
+
         section.hero(id="0")
           .container.hero__container
             header.header
@@ -93,12 +111,12 @@ html(lang="ru")
                 .about__ps            
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-          .about-section__triangles
-            .triangles
-              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
-                polygon(points="0,0 0,100 1000,100")
-              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
-                polygon(points="1000,0 1000,100 0,100")
+        .welcome-section__triangles
+          .triangles
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
+              polygon(points="0,0 0,100 1000,100")
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
+              polygon(points="1000,0 1000,100 0,100")       
       section.values(id="2")
         .container
           .values__title

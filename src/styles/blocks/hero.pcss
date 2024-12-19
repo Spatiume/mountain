@@ -1,10 +1,13 @@
 .hero {
   display: block;
-  position: relative;
   height: 100vh;
   min-height: 650px;
-  margin-bottom: 306px;
+  margin-bottom: 34px;
+  position: static;
+  width: 100%;
+
 }
+
 
 .hero__container {
   display: flex;
@@ -20,9 +23,11 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 4%;
+  z-index: 10;
 }
 
 .hero__bottom-btn {
+  z-index: 10;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

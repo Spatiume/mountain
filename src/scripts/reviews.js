@@ -64,5 +64,10 @@ new Vue({
   created() {
     const data = require('./../data/reviews.json');
     this.reviews = this.makeArrWithRequiredImages(data);
+  },
+  mounted() {
+    if (window.innerWidth < 768) {
+      this.numReviewsToView = 1;
+    }
   }
 })
