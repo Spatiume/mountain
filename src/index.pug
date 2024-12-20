@@ -11,20 +11,41 @@ html(lang="ru")
     .wrapper 
       .welcome-section
         section.parallax
-          .parallax__layer(data-speed="0.1")
-            img(src=require("./images/parallax/1.jpg").default).parallax__img
-          .parallax__layer(data-speed="0.25")
-            img(src=require("./images/parallax/2.png").default).parallax__img
+          .parallax__layer()
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/1.jpg").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
+          .parallax__layer()
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/2.png").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
           .parallax__layer(data-speed="0.35")
-            img(src=require("./images/parallax/3.png").default).parallax__img
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/3.png").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
           .parallax__layer(data-speed="0.38")
-            img(src=require("./images/parallax/4.png").default).parallax__img
-          .parallax__layer(data-speed="0.45")
-            img(src=require("./images/parallax/5.png").default).parallax__img
-          .parallax__layer(data-speed="0.48")
-            img(src=require("./images/parallax/6.png").default).parallax__img
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/4.png").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
+          .parallax__layer()
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/5.png").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
+          .parallax__layer()
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/6.png").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
           .parallax__layer(data-speed="0.50")
-            img(src=require("./images/parallax/7.png").default).parallax__img
+            picture 
+              source(media="(min-width: 769px)" srcset=require("./images/parallax/7.png").default)
+              source(media="(max-width:768px)" srcset="")
+              img(src="").parallax__img
           .parallax__layer(data-speed="0.2")
             .parallax__img
 
@@ -59,7 +80,7 @@ html(lang="ru")
                 .user-data__name Владимир <br> Астаханов
 
             .hero__bottom-btn
-              a().scroll-down-btn Скролл
+              a(disabled="disabled").scroll-down-btn Скролл
                 +icon('scroll', 'scroll-down-btn__icon')
           .full-screen-menu
             .full-screen-menu__btn
@@ -118,7 +139,7 @@ html(lang="ru")
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangles
               polygon(points="1000,0 1000,100 0,100")       
       section.values(id="2")
-        .container
+        .container.values__container
           .values__title
             .long-title
               h3.long-title__text Чем я могу быть полезен вам

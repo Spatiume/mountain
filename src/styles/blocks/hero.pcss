@@ -2,10 +2,12 @@
   display: block;
   height: 100vh;
   min-height: 650px;
-  margin-bottom: 34px;
-  position: static;
   width: 100%;
+  position: absolute;
 
+  @include tablets {
+    background: url('./../images/parallax/phones.jpg') center center/cover no-repeat;
+  }
 }
 
 

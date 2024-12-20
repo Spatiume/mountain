@@ -1,6 +1,9 @@
 .values {
   position: relative;
-  // padding: 13.5% 22% 6% 28%;
+}
+
+.values__container {
+  position: relative;
 }
 
 .values__title {
@@ -16,10 +19,10 @@
 
 .values__decoration {
   position: absolute;
-  top: 30.5%;
-  left: -7.5%;
-  width: 34.5%;
-
+  bottom: 5%;
+  left: -13.5%;
+  width: 38%;
+  z-index: 10;
   @include tablets {
     display: none;
   }
@@ -30,7 +33,7 @@
   padding-bottom: 6%;
   padding-right: 1%;
 
-  @include tablets{
+  @include tablets {
     padding-left: 7%;
     padding-right: 7%;
   }

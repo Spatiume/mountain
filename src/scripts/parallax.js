@@ -10,9 +10,9 @@ function moveLayersDependsOnScroll(wScroll) {
   })
 }
 
-if (window.innerWidth > 768) {
+// if (window.innerWidth > 768) {
   window.addEventListener('scroll', e => {
     const wScroll = window.scrollY;
     moveLayersDependsOnScroll(wScroll);
   })
-}
+// }

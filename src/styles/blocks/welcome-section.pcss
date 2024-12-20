@@ -1,18 +1,22 @@
 .welcome-section {
   height: 2100px;
 
+  @include desktopHd{
+    height: 1690px;
+  }
+
   @include desktop {
     height: 1690px;
   }
 
   @include tablets{
-    height: 1600px;
-    background: url(./../images/content/tablets.png) center center/cover no-repeat;
+    height: initial;
+    // background: url(./../images/content/tablets.png) center center/cover no-repeat;
   }
 
   @include phones{
-    height: 1600px;
-    background: url(./../images/content/mobile.png) center center/cover no-repeat;
+    // height: 1600px;
+    // background: url(./../images/content/mobile.png) center center/cover no-repeat;
   }
 
 

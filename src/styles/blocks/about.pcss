@@ -10,6 +10,10 @@
 .about__user-data {
   width: 32%;
 
+  @include tablets{
+    width: 40%;
+  }
+
   @include phones {
     width: 100%;
     margin-bottom: 40px;
@@ -22,6 +26,11 @@
   flex-direction: column;
   padding-right: 8%;
   padding-bottom: 1.75%;
+
+  @include tablets{
+    padding-right: 0;
+    padding-bottom: 0;
+  }
 
   @include phones {
     width: 100%;
